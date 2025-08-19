@@ -30,6 +30,11 @@ header ul {
 }
 header li {
   list-style: none;
+  transition: all 0.5s ease;
+}
+header li:hover {
+   transform: translateY(-10px);
+   font-weight: bold;
 }
 nav a {
   text-decoration: none;
@@ -97,6 +102,9 @@ nav a {
   background-color: var(--brand-color);
   text-decoration: none;
   animation-delay: 0.5s;
+}
+.hero-section a:hover{
+  background-color: #007bff;
 }
 
 .hero-section span {
