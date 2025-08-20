@@ -13,3 +13,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(section);
 });
+
+const navLink = document.getElementById("nav-links");
+const menuToggle = document.getElementById("menu-toggle");
+const icon = document.getElementById("bar");
+const navItems = document.querySelectorAll("#nav-links a")
+
+menuToggle.addEventListener("click", () => {
+  navLink.classList.toggle("show");
+
+  if(icon.classList.contains("fa-bars")) {
+    icon.classList.remove("fa-bars");
+    icon.classList.add("fa-times");
+  }
+  else{
+    icon.classList.add("fa-bars");
+    icon.classList.remove("fa-times");
+  }
+
+navItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLink.classList.remove("show");
+
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  });
+});
+});
+
