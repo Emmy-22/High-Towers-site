@@ -564,6 +564,7 @@ footer button {
   padding: 10px;
   background-color: var(--brand-color);
   border: none;
+  color: white;
   border-radius: 5px;
 }
 .email-1 {
