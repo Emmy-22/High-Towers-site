@@ -11,58 +11,53 @@ body {
  overflow-x: hidden;
 }
 /* header */
-
-
 header {
   display: flex;
   justify-content: space-between;
-  margin: 40px 50px;
-}
-.menu-toggle {
-  display: none;
-  font-weight: bold;
-}
-header ul {
-  display: flex;
-  gap: 5%;
-  font-size: 15px;
-  margin-top: 5px;
-}
-header li {
-  list-style: none;
-  transition: all 0.5s ease;
-}
-header li:hover {
-   transform: translateY(-10px);
-   font-weight: bold;
-}
-nav a {
-  text-decoration: none;
-   color: var(--brand-color);
+  margin: 20px 20px 20px 20px;
 }
 .logo {
-  font-size: 20px;
-  color: #2f89fc;
-  font-weight: bold;
+  color: var(--brand-color);
+  font-size: 25px;
+  
 }
-.book {
-   font-size: 15px;
-   border: 1px solid #2f89fc;
-   padding: 10px;
-   border-radius: 10px;
-   transition:  background-color 0.3s ease;
+#nav-links ul{
+  display: flex;
+  gap: 20px;
+  margin-top: 5px;
+  transition: transform 0.9s ease-in 0.2s;
 }
-.book a {
+#nav-links li {
+  list-style: none;
+}
+#nav-links a {
   text-decoration: none;
-   color: var(--brand-color);
-   transition: color 0.3s ease;
+  color: var(--brand-color);
+  font-size: 17px;
+  font-weight: 500;
 }
-.book:hover {
+#nav-links li:hover {
+  transform: translateY(-5px);
+}
+#menu-toggle {
+  display: none;
+}
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  color: var(--brand-color);
+  border: 1px solid var(--brand-color);
+  padding: 7px 20px;
+  border-radius: 15px;
+  font-size: 17px;
+  transition: all 0.4s ease-in 0.2s;
+}
+.desktop-only:hover {
+  color: white;
   background-color: var(--brand-color);
 }
-.book:hover a {
- color: white;
-}
+
 
 /* end-of-header */
 .hero-section {
@@ -192,10 +187,11 @@ gap: 10px;
 
 .new {
   display: flex;
-  gap: 50px;
+justify-content: space-between;
   color: #000;
   text-align: left;
   margin-top: 20px;
+  padding: 0 20px;
   
 }
 .city {
@@ -604,7 +600,7 @@ footer button {
 
   .new {
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
   margin-bottom: 20px;
   }
 .section-1 .image {
@@ -685,30 +681,82 @@ footer button {
   .testimony {
     flex: 0 0 70%;
   }
+  /* header-section */
   header {
     display: flex;
-    justify-content: space-between;
     background-color: var(--brand-color);
+    margin: 0;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     color: white;
-    margin: 0 0 20px 0;
-    padding: 20px 30px;
+    z-index: 999;
   }
   .logo {
     color: white;
+    z-index: 3000;
   }
-  nav, .book {
+   #nav-links.show {
+    display: block;
+    z-index: 999;
+     text-align: center;
+   }
+  #nav-links {
+    display: none;
+    background-color: var(--brand-color);
+   position: absolute;
+   top: 60px;
+   left: 0;
+   width: 100vw;
+   height: 50vh;
+  }
+  #nav-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  #nav-links a{
+    color: white;
+  }
+  .mobile-only {
+    display: block;
+    margin-top: 30px;
+  }
+  .mobile-only a {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+   color: var(--brand-color) !important;
+    z-index: 3000;
+  }
+  .desktop-only{
     display: none;
   }
-  .menu-toggle {
+  #menu-toggle{
     display: flex;
+    color: white;
+    font-size: 30px;
   }
+    #menu-toggle i {
+      z-index: 999;
+      position: relative;
+    }
+
+
+
+
+  /* end-of-header-section */
   .hero-section {
     display: block;
+    margin-top: 90px;
   }
    .hero-section .elevate {
     align-items: center;
     text-align: center;
     justify-content: center;
+    margin: auto;
     padding-left: 0;
     padding-top: 20px;
     padding-bottom: 80px;
@@ -720,6 +768,9 @@ footer button {
    .hero-section p {
      width: 90%;
      font-size: 50px;
+     text-align: center;
+     justify-content: center;
+     align-items: center;
      margin: auto;
      margin-top: 30px;
      margin-bottom: 40px;
@@ -740,6 +791,7 @@ footer button {
   }
   .new {
     margin-bottom: 20px;
+    justify-content: space-between;
   }
   }
 
@@ -750,7 +802,7 @@ footer button {
   }
   .img1, .img2, .img3 {
   flex: 1 1 300px;
-  max-width: 100%;
+  max-width: 90%;
 }
 .section-2 .card {
   height: 250px;
@@ -808,5 +860,12 @@ footer button {
   width: 100%;
   height: auto;
   }
-  
+}
+@media (max-width: 320px) {
+    #nav-links {
+   height: 60vh;
+  }
+  .hero-section p {
+    font-size: 35px;
+  }
 }
