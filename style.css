@@ -236,7 +236,6 @@ margin-top: 20px;
 display: flex;
 flex-wrap: wrap;
 gap: 20px;
-
 }
 .section-2 i {
   color: var(--brand-color);
@@ -252,13 +251,10 @@ gap: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   position: relative;
-  
   cursor: pointer;
   overflow: hidden;
   transition: height 0.4s ease;
-
   flex: 1 1 300px;
   max-width: 48%;
 }
@@ -286,10 +282,8 @@ gap: 20px;
   transform: translateY(100%);
   transition: opacity 0.3s ease;
 }
-
 .card:hover .front {
   opacity: 0;
-  /* transform: translateY(-100%); */
 }
 .card:hover .back {
   opacity: 1;
